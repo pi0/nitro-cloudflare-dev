@@ -1,5 +1,6 @@
 import { fileURLToPath } from "node:url";
 import { relative, resolve } from "node:path";
+import { promises as fs } from "node:fs";
 import type { Nitro } from "nitropack";
 import type { Nuxt } from "nuxt/schema";
 import consola from "consola";
@@ -20,6 +21,18 @@ async function nitroModule(nitro: Nitro) {
 
   // Resolve the persist dir
   const persistDir = resolve(nitro.options.rootDir, ".wrangler/state/v3");
+
+  // Add `.wrnagle/state/v3` to `.gitignore`
+  const gitIgnorePath = await findFile(".gitignore", {
+    startingFrom: nitro.options.rootDir,
+  }).catch(() => undefined);
+  if (gitIgnorePath) {
+    const gitIgnore = await fs.readFile(gitIgnorePath, "utf8");
+    if (!gitIgnore.includes(".wrangler/state/v3")) {
+      consola.info("Adding `.wrangler/state/v3` to `.gitignore`...");
+      await fs.writeFile(gitIgnorePath, gitIgnore + "\n.wrangler/state/v3\n");
+    }
+  }
 
   consola.box(
     [
