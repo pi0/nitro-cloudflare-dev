@@ -6,3 +6,5 @@ node_modules
 .data
 .env
 dist
+
+.wrangler/state/v3
