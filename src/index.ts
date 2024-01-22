@@ -26,11 +26,14 @@ async function nitroModule(nitro: Nitro) {
   const gitIgnorePath = await findFile(".gitignore", {
     startingFrom: nitro.options.rootDir,
   }).catch(() => undefined);
+  let addedToGitIgnore = false;
   if (gitIgnorePath) {
     const gitIgnore = await fs.readFile(gitIgnorePath, "utf8");
     if (!gitIgnore.includes(".wrangler/state/v3")) {
-      consola.info("Adding `.wrangler/state/v3` to `.gitignore`...");
-      await fs.writeFile(gitIgnorePath, gitIgnore + "\n.wrangler/state/v3\n");
+      await fs
+        .writeFile(gitIgnorePath, gitIgnore + "\n.wrangler/state/v3\n")
+        .catch(() => {});
+      addedToGitIgnore = true;
     }
   }
 
@@ -39,7 +42,7 @@ async function nitroModule(nitro: Nitro) {
       "🔥 Cloudflare context bindings enabled for dev server",
       "",
       `Config path: ${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.toml`")}`,
-      `Persist dir: \`${relative(".", persistDir)}\``,
+      `Persist dir: \`${relative(".", persistDir)}\` ${addedToGitIgnore ? colorize("green", "(added to `.gitignore`)") : ""}`,
     ].join("\n"),
   );
 
