@@ -1,4 +1,6 @@
 import type { NitroAppPlugin } from "nitropack";
+// @ts-ignore
+import { useRuntimeConfig } from "#imports";
 
 export default <NitroAppPlugin>function (nitroApp) {
   let _proxy: ReturnType<typeof getBindingsProxy>;
@@ -33,9 +35,7 @@ async function getBindingsProxy() {
 
   const runtimeConfig: {
     wrangler: { configPath: string; persistDir: string };
-  } =
-    // @ts-ignore
-    useRuntimeConfig();
+  } = useRuntimeConfig();
 
   const proxy = await getBindingsProxy({
     configPath: runtimeConfig.wrangler.configPath,
