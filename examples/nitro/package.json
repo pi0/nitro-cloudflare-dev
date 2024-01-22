@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "nitro prepare",
     "dev": "PORT=3001 nitropack dev",
     "build": "nitropack build",
     "preview": "node .output/server/index.mjs"

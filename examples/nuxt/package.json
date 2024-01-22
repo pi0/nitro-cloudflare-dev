@@ -6,8 +6,7 @@
     "build": "nuxt build",
     "dev": "PORT=3002 nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "prepare": "nuxt prepare"
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "nuxt": "^3.9.3",
