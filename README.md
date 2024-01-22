@@ -13,10 +13,18 @@ This is a proof of concept module to enable access to the Cloudflare runtime bin
 First, install `nitro-cloudflare-bindings` and `wrangler` packages as a dev dependency
 
 ```sh
-npx nypm i -D wrangler nitro-cloudflare-bindings
-```
+# npm
+npm i -D wrangler@beta nitro-cloudflare-bindings
 
-(universal script uses [unjs/nypm](https://github.com/unjs/nypm) to automatically detect your package manager)
+# pnpm
+pnpm i -D wrangler@beta nitro-cloudflare-bindings
+
+# yarn
+yarn add -D wrangler@beta nitro-cloudflare-bindings
+
+# bun
+bun i -D wrangler@beta nitro-cloudflare-bindings
+```
 
 Then configure the module
 
