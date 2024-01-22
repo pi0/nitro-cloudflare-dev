@@ -1,0 +1,59 @@
+{
+  "name": "nitro-cloudflare-bindings",
+  "version": "0.0.0",
+  "description": "POC module to enable access to the Cloudflare runtime bindings in development server of Nitro and Nuxt",
+  "repository": "pi0/nitro-cloudflare-bindings",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./dist/runtime/*": {
+      "types": "./dist/runtime/*.d.ts",
+      "import": "./dist/runtime/*.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev:nitro": "pnpm run -C examples/nitro dev",
+    "dev:nuxt": "pnpm run -C examples/nuxt dev",
+    "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs . && prettier -c src",
+    "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix && prettier -c src -w",
+    "prepack": "pnpm run build",
+    "prepare": "unbuild --stub",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm test:types",
+    "test:types": "tsc --noEmit --skipLibCheck"
+  },
+  "resolutions": {
+    "nitro-cloudflare-bindings": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.52.0",
+    "eslint-config-unjs": "^0.2.1",
+    "h3": "^1.10.0",
+    "jiti": "^1.20.0",
+    "miniflare": "^3.20231218.2",
+    "nitropack": "^2.8.1",
+    "nuxt": "^3.9.3",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "wrangler": "0.0.0-fa09f4a2"
+  },
+  "packageManager": "pnpm@8.10.0",
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "consola": "^3.2.3",
+    "pkg-types": "^1.0.3"
+  }
+}
