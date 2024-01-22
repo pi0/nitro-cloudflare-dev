@@ -53,6 +53,12 @@ async function nitroModule(nitro: Nitro) {
     persistDir,
   };
 
+  // Make sure runtime is transpiled
+  nitro.options.externals.inline = nitro.options.externals.inline || [];
+  nitro.options.externals.inline.push(
+    fileURLToPath(new URL("runtime/", import.meta.url)),
+  );
+
   // Add plugin to inject bindings to dev server
   nitro.options.plugins = nitro.options.plugins || [];
   nitro.options.plugins.push(
