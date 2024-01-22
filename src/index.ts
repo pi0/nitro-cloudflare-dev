@@ -18,7 +18,7 @@ async function nitroModule(nitro: Nitro) {
   });
 
   // Resolve the persist dir
-  const persistDir = resolve(nitro.options.buildDir, "wrangler");
+  const persistDir = resolve(nitro.options.rootDir, ".wrangler/state/v3");
 
   consola.box(
     [
