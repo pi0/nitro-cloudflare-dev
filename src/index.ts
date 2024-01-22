@@ -3,6 +3,7 @@ import { relative, resolve } from "node:path";
 import type { Nitro } from "nitropack";
 import type { Nuxt } from "nuxt/schema";
 import consola from "consola";
+import { colorize } from "consola/utils";
 import { findFile } from "pkg-types";
 
 export {} from "./types";
@@ -15,7 +16,7 @@ async function nitroModule(nitro: Nitro) {
   // Find wrangler.toml
   const configPath = await findFile("wrangler.toml", {
     startingFrom: nitro.options.srcDir,
-  });
+  }).catch(() => undefined);
 
   // Resolve the persist dir
   const persistDir = resolve(nitro.options.rootDir, ".wrangler/state/v3");
@@ -24,7 +25,7 @@ async function nitroModule(nitro: Nitro) {
     [
       "🔥 Cloudflare context bindings enabled for dev server",
       "",
-      `Config path: \`${relative(".", configPath)}\``,
+      `Config path: ${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.toml`")}`,
       `Persist dir: \`${relative(".", persistDir)}\``,
     ].join("\n"),
   );
