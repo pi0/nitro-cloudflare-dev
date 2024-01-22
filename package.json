@@ -9,11 +9,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+      "default": "./dist/index.mjs"
     },
     "./dist/runtime/*": {
       "types": "./dist/runtime/*.d.ts",
-      "import": "./dist/runtime/*.mjs"
+      "default": "./dist/runtime/*.mjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -35,6 +35,10 @@
   "resolutions": {
     "nitro-cloudflare-bindings": "workspace:*"
   },
+  "dependencies": {
+    "consola": "^3.2.3",
+    "pkg-types": "^1.0.3"
+  },
   "devDependencies": {
     "@types/node": "^20.8.9",
     "changelogen": "^0.5.5",
@@ -50,10 +54,5 @@
     "unbuild": "^2.0.0",
     "wrangler": "0.0.0-fa09f4a2"
   },
-  "packageManager": "pnpm@8.10.0",
-  "dependencies": {
-    "@iarna/toml": "^2.2.5",
-    "consola": "^3.2.3",
-    "pkg-types": "^1.0.3"
-  }
+  "packageManager": "pnpm@8.10.0"
 }
