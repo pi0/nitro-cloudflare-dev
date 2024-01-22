@@ -58,8 +58,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(typescript@5.3.3)
       wrangler:
-        specifier: 0.0.0-fa09f4a2
-        version: 0.0.0-fa09f4a2
+        specifier: 3.23.0
+        version: 3.23.0
 
   examples/nitro:
     devDependencies:
@@ -8318,8 +8318,8 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20231218.0
     dev: true
 
-  /wrangler@0.0.0-fa09f4a2:
-    resolution: {integrity: sha512-YU80S697jpoRf8OdzOI+E4aSQXceO1LdtzE5zF7NVuxkNALsaesqM8utQ/MDv5rAx5vnShaolDuY/vvc/PoLTw==}
+  /wrangler@3.23.0:
+    resolution: {integrity: sha512-mOWPL02/popoF6jjb4TT8au4yvo8VFu6O6/IwcRN74rlgwaGS0XvlkFtbofBGAdDUHAh5DXkuoPNS871mXNuJg==}
     engines: {node: '>=16.17.0'}
     hasBin: true
     dependencies:
