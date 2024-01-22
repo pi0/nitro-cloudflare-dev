@@ -6,7 +6,10 @@ export default <NitroAppPlugin>function (nitroApp) {
   nitroApp.hooks.hook("request", async (event) => {
     // Lazy initialize proxy when first request comes in
     if (!_proxy) {
-      _proxy = getBindingsProxy();
+      _proxy = getBindingsProxy().catch((error) => {
+        console.error("Failed to initialize wrangler bindings proxy", error);
+        return { bindings: {}, dispose: () => Promise.resolve() };
+      });
     }
 
     // Inject proxy bindings to the request context
