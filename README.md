@@ -7,20 +7,10 @@ This proof of concept module enables access to the Cloudflare runtime bindings i
 
 ## Usage
 
-First, install `nitro-cloudflare-bindings` and `wrangler` packages as a dev dependency
+First, install `nitro-cloudflare-bindings` and `wrangler` packages as a dev dependency: ([unjs/nypm](https://nypm.unjs.io) will automatically detect your package manager!)
 
 ```sh
-# npm
-npm i -D wrangler@beta nitro-cloudflare-bindings
-
-# pnpm
-pnpm i -D wrangler@beta nitro-cloudflare-bindings
-
-# yarn
-yarn add -D wrangler@beta nitro-cloudflare-bindings
-
-# bun
-bun i -D wrangler@beta nitro-cloudflare-bindings
+npx nypm@latest add -D wrangler@beta nitro-cloudflare-bindings
 ```
 
 For **Nuxt** update `nuxt.config.ts`:
