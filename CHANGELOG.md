@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.2...v0.0.3)
+
+### 📦 Build
+
+- Remove `prepare` -_- ([3996e25](https://github.com/pi0/nitro-cloudflare-bindings/commit/3996e25))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.2
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.1...v0.0.2)
