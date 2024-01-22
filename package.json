@@ -1,8 +1,8 @@
 {
-  "name": "nitro-cloudflare-bindings",
+  "name": "nitro-cloudflare-dev",
   "version": "0.0.6",
   "description": "POC module to enable access to the Cloudflare runtime bindings in development server of Nitro and Nuxt",
-  "repository": "pi0/nitro-cloudflare-bindings",
+  "repository": "pi0/nitro-cloudflare-dev",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -33,7 +33,7 @@
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "resolutions": {
-    "nitro-cloudflare-bindings": "workspace:*"
+    "nitro-cloudflare-dev": "workspace:*"
   },
   "dependencies": {
     "consola": "^3.2.3",

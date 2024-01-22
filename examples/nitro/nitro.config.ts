@@ -1,4 +1,4 @@
-import nitroCloudflareBindings from "nitro-cloudflare-bindings";
+import nitroCloudflareBindings from "nitro-cloudflare-dev";
 
 // https://nitro.unjs.io/config
 export default defineNitroConfig({

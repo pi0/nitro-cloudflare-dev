@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "nitropack": "latest",
-    "nitro-cloudflare-bindings": "latest"
+    "nitro-cloudflare-dev": "latest"
   }
 }
