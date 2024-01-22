@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- Automatically add `.wrangler/state/v3` to `.gitignore` ([5bf2c5b](https://github.com/pi0/nitro-cloudflare-bindings/commit/5bf2c5b))
+
+### 🩹 Fixes
+
+- Handle when `wrangler.toml` is not found ([0340c1d](https://github.com/pi0/nitro-cloudflare-bindings/commit/0340c1d))
+
+### 💅 Refactors
+
+- Default persist dir to `.wrangler/state/v3` ([88d91ff](https://github.com/pi0/nitro-cloudflare-bindings/commit/88d91ff))
+
+### 📦 Build
+
+- Run `build` before release ([d3f32d2](https://github.com/pi0/nitro-cloudflare-bindings/commit/d3f32d2))
+
+### 🏡 Chore
+
+- Add renovate config ([f18fc5c](https://github.com/pi0/nitro-cloudflare-bindings/commit/f18fc5c))
+- Update readme ([e5cfcf4](https://github.com/pi0/nitro-cloudflare-bindings/commit/e5cfcf4))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.1
 
 
