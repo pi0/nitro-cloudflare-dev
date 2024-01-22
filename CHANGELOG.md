@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Explicit import from `#imports` ([dfcfb53](https://github.com/pi0/nitro-cloudflare-bindings/commit/dfcfb53))
+
+### 💅 Refactors
+
+- Graceful error when cannot get bindings ([762f747](https://github.com/pi0/nitro-cloudflare-bindings/commit/762f747))
+- Compact message for added to .gitignore ([67e1828](https://github.com/pi0/nitro-cloudflare-bindings/commit/67e1828))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.3
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.2...v0.0.3)
