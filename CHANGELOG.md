@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.5...v0.0.6)
+
+### 🩹 Fixes
+
+- Make sure `runtime/` is transpiled ([77156bb](https://github.com/pi0/nitro-cloudflare-bindings/commit/77156bb))
+
+### 🏡 Chore
+
+- **release:** V0.0.5 ([7277bdd](https://github.com/pi0/nitro-cloudflare-bindings/commit/7277bdd))
+- Update lockfile ([e68432b](https://github.com/pi0/nitro-cloudflare-bindings/commit/e68432b))
+- Update readme ([fe75b7f](https://github.com/pi0/nitro-cloudflare-bindings/commit/fe75b7f))
+- Remove prepare script from examples ([35652b2](https://github.com/pi0/nitro-cloudflare-bindings/commit/35652b2))
+- Update gitignore ([4b03f4b](https://github.com/pi0/nitro-cloudflare-bindings/commit/4b03f4b))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.5
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-bindings/compare/v0.0.4...v0.0.5)
