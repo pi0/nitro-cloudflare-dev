@@ -1,6 +1,6 @@
 # Cloudflare Bindings for Nitro and Nuxt
 
-This proof of concept module enables access to the Cloudflare runtime bindings in the development server of [Nitro](https://nitro.unjs.io) and [Nuxt](https://nuxt.com) using the [new `getBindingsProxy` API](https://github.com/cloudflare/workers-sdk/pull/4523) exposed by wrangler (Beta) and [miniflare](https://miniflare.dev/)
+This proof of concept module enables access to the Cloudflare runtime bindings in the development server of [Nitro](https://nitro.unjs.io) and [Nuxt](https://nuxt.com) using the [new `getBindingsProxy` API](https://github.com/cloudflare/workers-sdk/pull/4523) exposed by [wrangler](https://developers.cloudflare.com/workers/wrangler/) and [miniflare](https://miniflare.dev/)
 
 > [!NOTE]
 > Nitro plans to introduce a new method to allow native dev presets, meaning you can natively run [miniflare](https://miniflare.dev/) as your development server without this module or a proxy in the future!
@@ -10,7 +10,7 @@ This proof of concept module enables access to the Cloudflare runtime bindings i
 First, install `nitro-cloudflare-dev` and `wrangler` packages as a dev dependency: ([unjs/nypm](https://nypm.unjs.io) will automatically detect your package manager!)
 
 ```sh
-npx nypm@latest add -D wrangler@beta nitro-cloudflare-dev
+npx nypm@latest add -D wrangler nitro-cloudflare-dev
 ```
 
 For **Nuxt** update `nuxt.config.ts`:
