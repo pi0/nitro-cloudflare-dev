@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.0.7
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Make sure `runtime/` is transpiled ([77156bb](https://github.com/pi0/nitro-cloudflare-dev/commit/77156bb))
+
+### 💅 Refactors
+
+- Rename to `nitro-cloudflare-dev` ([c389c42](https://github.com/pi0/nitro-cloudflare-dev/commit/c389c42))
+
+### 🏡 Chore
+
+- Update gitignore ([4b03f4b](https://github.com/pi0/nitro-cloudflare-dev/commit/4b03f4b))
+- **release:** V0.0.6 ([95d6f24](https://github.com/pi0/nitro-cloudflare-dev/commit/95d6f24))
+- Use nypm for install ([1a16886](https://github.com/pi0/nitro-cloudflare-dev/commit/1a16886))
+- Update readme (remove mention of beta version of wrangler) ([9b7a74e](https://github.com/pi0/nitro-cloudflare-dev/commit/9b7a74e))
+- Bump wrangler devDependency ([7f66c67](https://github.com/pi0/nitro-cloudflare-dev/commit/7f66c67))
+
+### ❤️ Contributors
+
+- Dario-piotrowicz ([@dario-piotrowicz](http://github.com/dario-piotrowicz))
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.6
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.0.5...v0.0.6)
