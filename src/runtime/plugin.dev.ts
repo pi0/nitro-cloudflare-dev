@@ -1,23 +1,52 @@
 import type { NitroAppPlugin } from "nitropack";
 // @ts-ignore
-import { useRuntimeConfig } from "#imports";
+import { useRuntimeConfig, getRequestURL } from "#imports";
 
 export default <NitroAppPlugin>function (nitroApp) {
-  let _proxy: ReturnType<typeof getBindingsProxy>;
+  let _proxy: ReturnType<typeof getPlatformProxy>;
 
   nitroApp.hooks.hook("request", async (event) => {
     // Lazy initialize proxy when first request comes in
     if (!_proxy) {
-      _proxy = getBindingsProxy().catch((error) => {
+      _proxy = getPlatformProxy().catch((error) => {
         console.error("Failed to initialize wrangler bindings proxy", error);
-        return { bindings: {}, dispose: () => Promise.resolve() };
+        return {
+          env: {},
+          cf: {},
+          ctx: {
+            waitUntil() {},
+            passThroughOnException() {},
+          },
+          caches: {
+            open(): Promise<Cache> {
+              const result = Promise.resolve(new Cache());
+              return result;
+            },
+            get default(): Cache {
+              return new Cache();
+            },
+          },
+          dispose: () => Promise.resolve(),
+        } as unknown as ReturnType<typeof getPlatformProxy>;
       });
     }
 
-    // Inject proxy bindings to the request context
+    const proxy = await _proxy;
+
+    // Inject the various cf values from the proxy in event and event.context
+
+    event.waitUntil = proxy.ctx.waitUntil;
+    (event.context as any).cf = proxy.cf;
+    (event.context as any).waitUntil = proxy.ctx.waitUntil;
+
+    const request = new Request(getRequestURL(event));
+    (request as any).cf = proxy.cf;
+
     event.context.cloudflare = {
       ...event.context.cloudflare,
-      env: (await _proxy).bindings,
+      request,
+      env: proxy.env,
+      context: proxy.ctx,
     };
   });
 
@@ -27,9 +56,9 @@ export default <NitroAppPlugin>function (nitroApp) {
   });
 };
 
-async function getBindingsProxy() {
+async function getPlatformProxy() {
   const _pkg = "wrangler"; // Bypass bundling!
-  const { getBindingsProxy } = (await import(
+  const { getPlatformProxy } = (await import(
     _pkg
   )) as typeof import("wrangler");
 
@@ -37,10 +66,27 @@ async function getBindingsProxy() {
     wrangler: { configPath: string; persistDir: string };
   } = useRuntimeConfig();
 
-  const proxy = await getBindingsProxy({
+  const proxy = await getPlatformProxy({
     configPath: runtimeConfig.wrangler.configPath,
     persist: { path: runtimeConfig.wrangler.persistDir },
   });
 
   return proxy;
+}
+
+class Cache {
+  delete(): Promise<boolean> {
+    const result = Promise.resolve(false);
+    return result;
+  }
+
+  match() {
+    const result = Promise.resolve(undefined);
+    return result;
+  }
+
+  put(): Promise<void> {
+    const result = Promise.resolve();
+    return result;
+  }
 }
