@@ -9,6 +9,10 @@ import { findFile } from "pkg-types";
 
 export {} from "./types";
 
+function slash(path: string) {
+  return path.replace(/\\/g, "/");
+}
+
 async function nitroModule(nitro: Nitro) {
   if (!nitro.options.dev) {
     return; // Production doesn't need this
@@ -56,13 +60,13 @@ async function nitroModule(nitro: Nitro) {
   // Make sure runtime is transpiled
   nitro.options.externals.inline = nitro.options.externals.inline || [];
   nitro.options.externals.inline.push(
-    fileURLToPath(new URL("runtime/", import.meta.url)),
+    slash(fileURLToPath(new URL("runtime/", import.meta.url))),
   );
 
   // Add plugin to inject bindings to dev server
   nitro.options.plugins = nitro.options.plugins || [];
   nitro.options.plugins.push(
-    fileURLToPath(new URL("runtime/plugin.dev", import.meta.url)),
+    slash(fileURLToPath(new URL("runtime/plugin.dev", import.meta.url))),
   );
 }
 
