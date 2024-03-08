@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.1
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.0...v0.1.1)
+
+### 🔥 Performance
+
+- Try eagerly initializing proxy ([81113d6](https://github.com/pi0/nitro-cloudflare-dev/commit/81113d6))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.0
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.0.7...v0.1.0)
