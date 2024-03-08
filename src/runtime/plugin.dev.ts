@@ -3,24 +3,20 @@ import type { PlatformProxy } from "wrangler";
 // @ts-ignore
 import { useRuntimeConfig, getRequestURL } from "#imports";
 
+const _proxy = _getPlatformProxy()
+  .catch((error) => {
+    console.error("Failed to initialize wrangler bindings proxy", error);
+    return _createStubProxy();
+  })
+  .then((proxy) => {
+    (globalThis as any).__env__ = proxy.env;
+    return proxy;
+  });
+
+(globalThis as any).__env__ = _proxy.then((proxy) => proxy.env);
+
 export default <NitroAppPlugin>function (nitroApp) {
-  let _proxy: Promise<PlatformProxy>;
-
   nitroApp.hooks.hook("request", async (event) => {
-    // Lazy initialize proxy when first request comes in
-    if (!_proxy) {
-      const start = performance.now();
-      _proxy = _getPlatformProxy()
-        .catch((error) => {
-          console.error("Failed to initialize wrangler bindings proxy", error);
-          return _createStubProxy();
-        })
-        .finally(() => {
-          const time = Math.round(performance.now() - start);
-          console.info(`✔ Cloudflare dev proxy took ${time}ms to initialize.`);
-        });
-    }
-
     const proxy = await _proxy;
 
     // Inject the various cf values from the proxy in event and event.context
@@ -42,7 +38,6 @@ export default <NitroAppPlugin>function (nitroApp) {
     // Replicate Nitro production behavior
     // https://github.com/unjs/nitro/blob/main/src/runtime/entries/cloudflare-pages.ts#L55
     // https://github.com/unjs/nitro/blob/main/src/runtime/app.ts#L120
-    (globalThis as any).__env__ = proxy.env;
     (event.node.req as any).__unenv__ = {
       ...(event.node.req as any).__unenv__,
       waitUntil: event.context.waitUntil,
