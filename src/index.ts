@@ -9,6 +9,14 @@ import { findFile } from "pkg-types";
 
 export {} from "./types";
 
+declare module "nitropack" {
+  interface NitroOptions {
+    cloudflareDev?: {
+      persistDir?: string;
+    };
+  }
+}
+
 async function nitroModule(nitro: Nitro) {
   if (!nitro.options.dev) {
     return; // Production doesn't need this
@@ -20,7 +28,7 @@ async function nitroModule(nitro: Nitro) {
   }).catch(() => undefined);
 
   // Resolve the persist dir
-  const persistDir = resolve(nitro.options.rootDir, ".wrangler/state/v3");
+  const persistDir = resolve(nitro.options.rootDir, nitro.options.cloudflareDev?.persistDir || ".wrangler/state/v3");
 
   // Add `.wrnagle/state/v3` to `.gitignore`
   const gitIgnorePath = await findFile(".gitignore", {

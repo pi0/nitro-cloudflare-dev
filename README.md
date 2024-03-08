@@ -37,6 +37,12 @@ This module automatically finds the closest [`wrangler.toml`](https://developers
 
 Data is persisted `.wrangler/state/v3` directory. On first use of the module, it will be automatically added to the `.gitignore` file.
 
+You can configure additional options using `cloudflareDev: { }` in `nitro.config` or `nitro: { cloudflareDev: {} }` in `nuxt.config`.
+
+### Available options
+
+- `persistDir`: Sets the persist dir (default `.wrangler/state/v3`)
+
 ## Development
 
 - Clone this repository
