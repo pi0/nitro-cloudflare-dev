@@ -35,6 +35,11 @@ export default <NitroAppPlugin>function (nitroApp) {
     };
   });
 
+  // https://github.com/pi0/nitro-cloudflare-dev/issues/5
+  // https://github.com/unjs/hookable/issues/98
+  // @ts-expect-error
+  nitroApp.hooks._hooks.request.unshift(nitroApp.hooks._hooks.request.pop());
+
   // Dispose proxy when Nitro is closed
   nitroApp.hooks.hook("close", () => {
     return _proxy?.then((proxy) => proxy.dispose);
