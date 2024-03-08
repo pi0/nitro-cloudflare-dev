@@ -1,5 +1,57 @@
 # Changelog
 
+## v0.1.0
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.0.7...v0.1.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Use `getPlatformProxy` and provide more context fields ([#6](https://github.com/pi0/nitro-cloudflare-dev/pull/6))
+- Support configurable `persistDir` ([725fd42](https://github.com/pi0/nitro-cloudflare-dev/commit/725fd42))
+- Log initialization time ([be0deec](https://github.com/pi0/nitro-cloudflare-dev/commit/be0deec))
+- Replicate nitro production behavior ([36ad28e](https://github.com/pi0/nitro-cloudflare-dev/commit/36ad28e))
+
+### 🩹 Fixes
+
+- Slash runtime path ([#8](https://github.com/pi0/nitro-cloudflare-dev/pull/8))
+- Use `H3EventContext` ([745a2d5](https://github.com/pi0/nitro-cloudflare-dev/commit/745a2d5))
+- Allow access to the context within `request` hook ([cab495a](https://github.com/pi0/nitro-cloudflare-dev/commit/cab495a))
+
+### 💅 Refactors
+
+- Improve plugin ([63b6f55](https://github.com/pi0/nitro-cloudflare-dev/commit/63b6f55))
+
+### 📦 Build
+
+- Externalize `wrangler` types ([e4092d4](https://github.com/pi0/nitro-cloudflare-dev/commit/e4092d4))
+
+### 🌊 Types
+
+- Improve context types ([f33599e](https://github.com/pi0/nitro-cloudflare-dev/commit/f33599e))
+
+### 🏡 Chore
+
+- Update readme (remove mention of beta version of wrangler) ([9b7a74e](https://github.com/pi0/nitro-cloudflare-dev/commit/9b7a74e))
+- Bump wrangler devDependency ([7f66c67](https://github.com/pi0/nitro-cloudflare-dev/commit/7f66c67))
+- **release:** V0.0.7 ([483955a](https://github.com/pi0/nitro-cloudflare-dev/commit/483955a))
+- Update deps ([acf210f](https://github.com/pi0/nitro-cloudflare-dev/commit/acf210f))
+- Apply automated fixes ([45ad7d2](https://github.com/pi0/nitro-cloudflare-dev/commit/45ad7d2))
+- Apply automated fixes ([b5e480c](https://github.com/pi0/nitro-cloudflare-dev/commit/b5e480c))
+- Update example ([dc0f5bc](https://github.com/pi0/nitro-cloudflare-dev/commit/dc0f5bc))
+- Update lock ([0b2da15](https://github.com/pi0/nitro-cloudflare-dev/commit/0b2da15))
+- Show log once ([9975161](https://github.com/pi0/nitro-cloudflare-dev/commit/9975161))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Use `getPlatformProxy` and provide more context fields ([#6](https://github.com/pi0/nitro-cloudflare-dev/pull/6))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+- Markthree ([@markthree](http://github.com/markthree))
+- Dario Piotrowicz <dario@cloudflare.com>
+- Dario-piotrowicz ([@dario-piotrowicz](http://github.com/dario-piotrowicz))
+
 ## v0.0.7
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.0.6...v0.0.7)
