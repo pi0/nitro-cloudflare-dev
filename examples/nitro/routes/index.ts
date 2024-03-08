@@ -14,5 +14,7 @@ export default eventHandler((event) => {
     `typeof cloudflare.context.waitUntil: ${typeof cloudflare.context.waitUntil}`,
   );
 
+  event.waitUntil(Promise.resolve());
+
   return `<div><ul><br>${logs.map((str) => `<li>${str}</li>`).join("\n<br>\n")}</ul></div>`;
 });
