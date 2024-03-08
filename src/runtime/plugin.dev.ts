@@ -30,7 +30,6 @@ export default <NitroAppPlugin>function (nitroApp) {
     const request = new Request(getRequestURL(event)) as Request & {
       cf: typeof proxy.cf;
     };
-
     request.cf = proxy.cf;
 
     event.context.cloudflare = {
@@ -38,6 +37,15 @@ export default <NitroAppPlugin>function (nitroApp) {
       request,
       env: proxy.env,
       context: proxy.ctx,
+    };
+
+    // Replicate Nitro production behavior
+    // https://github.com/unjs/nitro/blob/main/src/runtime/entries/cloudflare-pages.ts#L55
+    // https://github.com/unjs/nitro/blob/main/src/runtime/app.ts#L120
+    (globalThis as any).__env__ = proxy.env;
+    (event.node.req as any).__unenv__ = {
+      ...(event.node.req as any).__unenv__,
+      waitUntil: event.context.waitUntil,
     };
   });
 
