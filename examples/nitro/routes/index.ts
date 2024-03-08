@@ -1,5 +1,5 @@
-export default eventHandler(async (event) => {
-  const cloudflare = await event.context.cloudflare;
+export default eventHandler((event) => {
+  const { cloudflare } = event.context;
 
   const logs: string[] = [];
   const log = (str: string) => logs.push(str);
