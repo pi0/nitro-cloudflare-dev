@@ -1,6 +1,6 @@
-import { fileURLToPath } from "node:url";
 import { relative, resolve } from "node:path";
 import { promises as fs } from "node:fs";
+import { fileURLToPath } from "mlly";
 import type { Nitro } from "nitropack";
 import type { Nuxt } from "nuxt/schema";
 import consola from "consola";
@@ -56,13 +56,13 @@ async function nitroModule(nitro: Nitro) {
   // Make sure runtime is transpiled
   nitro.options.externals.inline = nitro.options.externals.inline || [];
   nitro.options.externals.inline.push(
-    fileURLToPath(new URL("runtime/", import.meta.url)),
+    fileURLToPath(new URL("runtime/", import.meta.url))
   );
 
   // Add plugin to inject bindings to dev server
   nitro.options.plugins = nitro.options.plugins || [];
   nitro.options.plugins.push(
-    fileURLToPath(new URL("runtime/plugin.dev", import.meta.url)),
+    fileURLToPath(new URL("runtime/plugin.dev", import.meta.url))
   );
 }
 

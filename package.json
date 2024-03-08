@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "consola": "^3.2.3",
+    "mlly": "^1.6.0",
     "pkg-types": "^1.0.3"
   },
   "devDependencies": {
