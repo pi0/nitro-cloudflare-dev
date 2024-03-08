@@ -1,5 +1,5 @@
 declare module "h3" {
-  interface H3Context {
+  interface H3EventContext {
     cloudflare: {
       env: {
         [key: string]: unknown;
