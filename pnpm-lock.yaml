@@ -2611,7 +2611,7 @@ packages:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.30.5
+      magic-string: 0.30.8
       rollup: 4.9.6
     dev: true
 
@@ -2641,7 +2641,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.9.6)
       estree-walker: 2.0.2
-      magic-string: 0.30.5
+      magic-string: 0.30.8
       rollup: 4.9.6
     dev: true
 
@@ -2748,7 +2748,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
-      magic-string: 0.30.8
+      magic-string: 0.30.5
       rollup: 3.29.4
     dev: true
 
