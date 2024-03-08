@@ -9,10 +9,16 @@ export default <NitroAppPlugin>function (nitroApp) {
   nitroApp.hooks.hook("request", async (event) => {
     // Lazy initialize proxy when first request comes in
     if (!_proxy) {
-      _proxy = _getPlatformProxy().catch((error) => {
-        console.error("Failed to initialize wrangler bindings proxy", error);
-        return _createStubProxy();
-      });
+      const start = performance.now();
+      _proxy = _getPlatformProxy()
+        .catch((error) => {
+          console.error("Failed to initialize wrangler bindings proxy", error);
+          return _createStubProxy();
+        })
+        .finally(() => {
+          const time = Math.round(performance.now() - start);
+          console.info(`✔ Cloudflare dev proxy took ${time}ms to initialize.`);
+        });
     }
 
     const proxy = await _proxy;
