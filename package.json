@@ -41,19 +41,19 @@
     "pkg-types": "^1.0.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.25",
+    "@types/node": "^20.11.26",
     "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "eslint-config-unjs": "^0.2.1",
     "h3": "^1.11.1",
     "jiti": "^1.21.0",
-    "miniflare": "^3.20240304.0",
-    "nitropack": "^2.9.1",
+    "miniflare": "^3.20240304.1",
+    "nitropack": "^2.9.3",
     "nuxt": "^3.10.3",
     "prettier": "^3.2.5",
     "typescript": "^5.4.2",
     "unbuild": "^2.0.0",
-    "wrangler": "^3.32.0"
+    "wrangler": "^3.33.0"
   },
   "packageManager": "pnpm@8.15.4"
 }
