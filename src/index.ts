@@ -12,7 +12,9 @@ export {} from "./types";
 declare module "nitropack" {
   interface NitroOptions {
     cloudflareDev?: {
+      configPath?: string;
       persistDir?: string;
+      silent: boolean;
     };
   }
 }
@@ -23,9 +25,12 @@ async function nitroModule(nitro: Nitro) {
   }
 
   // Find wrangler.toml
-  const configPath = await findFile("wrangler.toml", {
-    startingFrom: nitro.options.srcDir,
-  }).catch(() => undefined);
+  let configPath = nitro.options.cloudflareDev?.configPath;
+  if (!configPath) {
+    configPath = await findFile("wrangler.toml", {
+      startingFrom: nitro.options.srcDir,
+    }).catch(() => undefined);
+  }
 
   // Resolve the persist dir
   const persistDir = resolve(
@@ -33,12 +38,13 @@ async function nitroModule(nitro: Nitro) {
     nitro.options.cloudflareDev?.persistDir || ".wrangler/state/v3",
   );
 
-  // Add `.wrnagle/state/v3` to `.gitignore`
+  // Add `.wrangler/state/v3` to `.gitignore`
   const gitIgnorePath = await findFile(".gitignore", {
     startingFrom: nitro.options.rootDir,
   }).catch(() => undefined);
+
   let addedToGitIgnore = false;
-  if (gitIgnorePath) {
+  if (gitIgnorePath && persistDir === ".wrangler/state/v3") {
     const gitIgnore = await fs.readFile(gitIgnorePath, "utf8");
     if (!gitIgnore.includes(".wrangler/state/v3")) {
       await fs
@@ -48,14 +54,16 @@ async function nitroModule(nitro: Nitro) {
     }
   }
 
-  consola.box(
-    [
-      "🔥 Cloudflare context bindings enabled for dev server",
-      "",
-      `Config path: ${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.toml`")}`,
-      `Persist dir: \`${relative(".", persistDir)}\` ${addedToGitIgnore ? colorize("green", "(added to `.gitignore`)") : ""}`,
-    ].join("\n"),
-  );
+  if (!nitro.options.cloudflareDev?.silent) {
+    consola.box(
+      [
+        "🔥 Cloudflare context bindings enabled for dev server",
+        "",
+        `Config path: \`${configPath ? relative(".", configPath) : colorize("yellow", "cannot find `wrangler.toml`")}\``,
+        `Persist dir: \`${relative(".", persistDir)}\` ${addedToGitIgnore ? colorize("green", "(added to `.gitignore`)") : ""}`,
+      ].join("\n"),
+    );
+  }
 
   // Share config to the runtime
   nitro.options.runtimeConfig.wrangler = {
