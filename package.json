@@ -22,7 +22,6 @@
     "dist"
   ],
   "scripts": {
-    "dev:prepare": "unbuild --stub",
     "build": "unbuild",
     "dev:nitro": "pnpm run -C examples/nitro dev",
     "dev:nuxt": "pnpm run -C examples/nuxt dev",

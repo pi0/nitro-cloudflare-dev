@@ -49,7 +49,7 @@ You can configure additional options using `cloudflareDev: { }` in `nitro.config
 - Install the latest LTS version of [Node.js](https://nodejs.org/en/)
 - Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 - Install dependencies using `pnpm install`
-- Prepare the build in stub mode using `pnpm dev:prepare`
+- Build in stub mode using `pnpm build --stub`
 - Run Nitro playground using `pnpm dev:nitro` or Nuxt playground using `pnpm dev:nuxt`
 
 ## License
