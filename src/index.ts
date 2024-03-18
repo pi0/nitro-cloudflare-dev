@@ -12,9 +12,9 @@ export {} from "./types";
 declare module "nitropack" {
   interface NitroOptions {
     cloudflareDev?: {
-      configPath?: string
-      persistDir?: string
-      hideConsoleBox: boolean
+      configPath?: string;
+      persistDir?: string;
+      hideConsoleBox: boolean;
     };
   }
 }
@@ -25,7 +25,7 @@ async function nitroModule(nitro: Nitro) {
   }
 
   // Find wrangler.toml
-  let configPath = nitro.options.cloudflareDev?.configPath
+  let configPath = nitro.options.cloudflareDev?.configPath;
   if (!configPath) {
     configPath = await findFile("wrangler.toml", {
       startingFrom: nitro.options.srcDir,
