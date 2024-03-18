@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.1.2
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.1...v0.1.2)
+
+### 🚀 Enhancements
+
+- Add `configPath` and `silent` options ([#12](https://github.com/pi0/nitro-cloudflare-dev/pull/12))
+
+### 🏡 Chore
+
+- **release:** V0.1.1 ([f49f1b2](https://github.com/pi0/nitro-cloudflare-dev/commit/f49f1b2))
+- Update lockfile ([8f70da8](https://github.com/pi0/nitro-cloudflare-dev/commit/8f70da8))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+- Sébastien Chopin <seb@nuxtlabs.com>
+
 ## v0.1.1
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.0...v0.1.1)
