@@ -14,7 +14,7 @@ declare module "nitropack" {
     cloudflareDev?: {
       configPath?: string;
       persistDir?: string;
-      hideConsoleBox: boolean;
+      silent: boolean;
     };
   }
 }
@@ -54,7 +54,7 @@ async function nitroModule(nitro: Nitro) {
     }
   }
 
-  if (!nitro.options.cloudflareDev?.hideConsoleBox) {
+  if (!nitro.options.cloudflareDev?.silent) {
     consola.box(
       [
         "🔥 Cloudflare context bindings enabled for dev server",
