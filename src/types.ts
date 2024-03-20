@@ -1,8 +1,7 @@
 import type { PlatformProxy } from "wrangler";
 
-type IncomingRequestCfProperties<T> = T extends PlatformProxy<any, infer T>
-  ? T
-  : never;
+type IncomingRequestCfProperties<T> =
+  T extends PlatformProxy<any, infer T> ? T : never;
 
 export interface CfProperties
   extends IncomingRequestCfProperties<PlatformProxy<any, any>> {}
