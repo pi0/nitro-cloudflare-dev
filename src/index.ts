@@ -7,7 +7,7 @@ import consola from "consola";
 import { colorize } from "consola/utils";
 import { findFile } from "pkg-types";
 
-export type { CfProperties, Env } from "./types";
+export type { Env } from "./types";
 
 declare module "nitropack" {
   interface NitroOptions {
@@ -35,7 +35,7 @@ async function nitroModule(nitro: Nitro) {
   // Resolve the persist dir
   const persistDir = resolve(
     nitro.options.rootDir,
-    nitro.options.cloudflareDev?.persistDir || ".wrangler/state/v3",
+    nitro.options.cloudflareDev?.persistDir || ".wrangler/state/v3"
   );
 
   // Add `.wrangler/state/v3` to `.gitignore`
@@ -67,7 +67,7 @@ async function nitroModule(nitro: Nitro) {
         `Persist dir: \`${relative(".", persistDir)}\` ${
           addedToGitIgnore ? colorize("green", "(added to `.gitignore`)") : ""
         }`,
-      ].join("\n"),
+      ].join("\n")
     );
   }
 
@@ -81,13 +81,13 @@ async function nitroModule(nitro: Nitro) {
   // Make sure runtime is transpiled
   nitro.options.externals.inline = nitro.options.externals.inline || [];
   nitro.options.externals.inline.push(
-    fileURLToPath(new URL("runtime/", import.meta.url)),
+    fileURLToPath(new URL("runtime/", import.meta.url))
   );
 
   // Add plugin to inject bindings to dev server
   nitro.options.plugins = nitro.options.plugins || [];
   nitro.options.plugins.push(
-    fileURLToPath(new URL("runtime/plugin.dev", import.meta.url)),
+    fileURLToPath(new URL("runtime/plugin.dev", import.meta.url))
   );
 }
 
