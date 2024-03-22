@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.1.3
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.2...v0.1.3)
+
+### 🚀 Enhancements
+
+- Add `shamefullyPatchR2Buckets` ([e15e190](https://github.com/pi0/nitro-cloudflare-dev/commit/e15e190))
+
+### 🏡 Chore
+
+- Update docs ([c74cd07](https://github.com/pi0/nitro-cloudflare-dev/commit/c74cd07))
+- Update lockfile ([76062e3](https://github.com/pi0/nitro-cloudflare-dev/commit/76062e3))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.2
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.1...v0.1.2)
