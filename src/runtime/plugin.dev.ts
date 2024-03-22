@@ -64,7 +64,11 @@ async function _getPlatformProxy() {
   })) as typeof import("wrangler");
 
   const runtimeConfig: {
-    wrangler: { configPath: string; persistDir: string };
+    wrangler: {
+      configPath: string;
+      persistDir: string;
+      shamefullyPatchR2Buckets?: boolean;
+    };
   } = useRuntimeConfig();
 
   const proxy = await getPlatformProxy({
@@ -72,13 +76,23 @@ async function _getPlatformProxy() {
     persist: { path: runtimeConfig.wrangler.persistDir },
   });
 
+  if (runtimeConfig.wrangler.shamefullyPatchR2Buckets) {
+    const { patchR2Bucket } = await import("./r2-patch");
+    for (const [key, binding] of Object.entries(proxy.env) as [string, any][]) {
+      if (binding.createMultipartUpload) {
+        // console.log("Patching R2Bucket", key);
+        proxy.env[key] = patchR2Bucket(binding);
+      }
+    }
+  }
+
   return proxy;
 }
 
 function _createStubProxy(): PlatformProxy {
   return {
     env: {},
-    cf: {},
+    cf: {} as any,
     ctx: {
       waitUntil() {},
       passThroughOnException() {},
