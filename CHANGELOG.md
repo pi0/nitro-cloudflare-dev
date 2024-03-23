@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.4
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.3...v0.1.4)
+
+### 🩹 Fixes
+
+- **r2-patch:** Await for mutex to be exclusive ([1b9db53](https://github.com/pi0/nitro-cloudflare-dev/commit/1b9db53))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.3
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.2...v0.1.3)
