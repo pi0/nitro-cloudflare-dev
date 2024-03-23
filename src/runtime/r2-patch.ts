@@ -28,7 +28,8 @@ export function patchR2Bucket(bucket: R2Bucket) {
   }
 
   async function get(...args: Parameters<R2Bucket["get"]>) {
-    if (_mutex) {
+    // eslint-disable-next-line no-unmodified-loop-condition
+    while (_mutex) {
       await _mutex;
     }
     try {
