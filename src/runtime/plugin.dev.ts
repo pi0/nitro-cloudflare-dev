@@ -68,12 +68,14 @@ async function _getPlatformProxy() {
       configPath: string;
       persistDir: string;
       shamefullyPatchR2Buckets?: boolean;
+      environment?: string;
     };
   } = useRuntimeConfig();
 
   const proxy = await getPlatformProxy({
     configPath: runtimeConfig.wrangler.configPath,
     persist: { path: runtimeConfig.wrangler.persistDir },
+    environment: runtimeConfig.wrangler.environment,
   });
 
   if (runtimeConfig.wrangler.shamefullyPatchR2Buckets) {
