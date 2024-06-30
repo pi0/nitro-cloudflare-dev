@@ -75,7 +75,7 @@ async function nitroModule(nitro: Nitro) {
       nitro.options.cloudflareDev?.shamefullyPatchR2Buckets,
     configPath,
     persistDir,
-    environment: nitro.options.cloudflareDev?.environmnet,
+    environment: nitro.options.cloudflareDev?.environment,
   };
 
   // Make sure runtime is transpiled
