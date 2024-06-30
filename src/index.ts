@@ -13,7 +13,7 @@ declare module "nitropack" {
   interface NitroOptions {
     cloudflareDev?: {
       configPath?: string;
-      environmnet?: string;
+      environment?: string;
       persistDir?: string;
       silent?: boolean;
       /** workaround for https://github.com/cloudflare/workers-sdk/issues/5360 */
