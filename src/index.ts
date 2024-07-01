@@ -13,6 +13,7 @@ declare module "nitropack" {
   interface NitroOptions {
     cloudflareDev?: {
       configPath?: string;
+      environment?: string;
       persistDir?: string;
       silent?: boolean;
       /** workaround for https://github.com/cloudflare/workers-sdk/issues/5360 */
@@ -74,6 +75,7 @@ async function nitroModule(nitro: Nitro) {
       nitro.options.cloudflareDev?.shamefullyPatchR2Buckets,
     configPath,
     persistDir,
+    environment: nitro.options.cloudflareDev?.environment,
   };
 
   // Make sure runtime is transpiled
