@@ -1,6 +1,6 @@
 {
   "name": "nitro-cloudflare-dev",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "POC module to enable access to the Cloudflare runtime bindings in development server of Nitro and Nuxt",
   "repository": "pi0/nitro-cloudflare-dev",
   "license": "MIT",

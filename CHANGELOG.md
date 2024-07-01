@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.1.5
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.4...v0.1.5)
+
+### 🚀 Enhancements
+
+- Support `environment` config ([#27](https://github.com/pi0/nitro-cloudflare-dev/pull/27))
+
+### 🏡 Chore
+
+- Update deps ([d0d0a94](https://github.com/pi0/nitro-cloudflare-dev/commit/d0d0a94))
+- Update to eslint v9 ([51c2c66](https://github.com/pi0/nitro-cloudflare-dev/commit/51c2c66))
+- Update lockfile ([05e9503](https://github.com/pi0/nitro-cloudflare-dev/commit/05e9503))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+- Pier Dolique ([@Perdolique](http://github.com/Perdolique))
+
 ## v0.1.4
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.3...v0.1.4)
