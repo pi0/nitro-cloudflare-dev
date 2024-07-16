@@ -42,19 +42,19 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240712.0",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.11",
     "changelogen": "^0.5.5",
     "eslint": "^9.7.0",
     "eslint-config-unjs": "^0.3.2",
     "h3": "^1.12.0",
     "jiti": "^1.21.6",
-    "miniflare": "^3.20240701.0",
+    "miniflare": "^3.20240712.0",
     "nitropack": "^2.9.7",
     "nuxt": "^3.12.3",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3",
     "unbuild": "^2.0.0",
-    "wrangler": "^3.64.0"
+    "wrangler": "^3.65.0"
   },
   "packageManager": "pnpm@8.15.8"
 }
