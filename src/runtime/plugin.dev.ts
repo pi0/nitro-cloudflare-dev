@@ -21,7 +21,7 @@ export default <NitroAppPlugin>function (nitroApp) {
 
     // Inject the various cf values from the proxy in event and event.context
     event.context.cf = proxy.cf;
-    event.context.waitUntil = proxy.ctx.waitUntil;
+    event.context.waitUntil = proxy.ctx.waitUntil.bind(proxy.ctx);
 
     const request = new Request(getRequestURL(event)) as Request & {
       cf: typeof proxy.cf;
