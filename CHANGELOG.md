@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.1.6
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.5...v0.1.6)
+
+### 🩹 Fixes
+
+- Bind context ([#35](https://github.com/pi0/nitro-cloudflare-dev/pull/35))
+
+### 🏡 Chore
+
+- Update lockfile ([cbfb50d](https://github.com/pi0/nitro-cloudflare-dev/commit/cbfb50d))
+- Update node version in ci ([e5ebc1c](https://github.com/pi0/nitro-cloudflare-dev/commit/e5ebc1c))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+- Marek Mahanský ([@mahansky](http://github.com/mahansky))
+
 ## v0.1.5
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.4...v0.1.5)
