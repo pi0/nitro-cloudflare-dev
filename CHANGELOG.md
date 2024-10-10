@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.2.0
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.6...v0.2.0)
+
+### 💅 Refactors
+
+- ⚠️  Remove `shamefullyPatchR2Buckets` option ([#47](https://github.com/pi0/nitro-cloudflare-dev/pull/47))
+
+### 🏡 Chore
+
+- Update deps ([996f57f](https://github.com/pi0/nitro-cloudflare-dev/commit/996f57f))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Remove `shamefullyPatchR2Buckets` option ([#47](https://github.com/pi0/nitro-cloudflare-dev/pull/47))
+
+### ❤️ Contributors
+
+- Sébastien Chopin ([@atinux](http://github.com/atinux))
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.6
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.5...v0.1.6)
