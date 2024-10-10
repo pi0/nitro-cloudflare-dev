@@ -16,8 +16,6 @@ declare module "nitropack" {
       environment?: string;
       persistDir?: string;
       silent?: boolean;
-      /** workaround for https://github.com/cloudflare/workers-sdk/issues/5360 */
-      shamefullyPatchR2Buckets?: boolean;
     };
   }
 }
@@ -71,8 +69,6 @@ async function nitroModule(nitro: Nitro) {
   // Share config to the runtime
   nitro.options.runtimeConfig.wrangler = {
     ...nitro.options.runtimeConfig.wrangler,
-    shamefullyPatchR2Buckets:
-      nitro.options.cloudflareDev?.shamefullyPatchR2Buckets,
     configPath,
     persistDir,
     environment: nitro.options.cloudflareDev?.environment,
