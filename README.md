@@ -44,7 +44,6 @@ You can configure additional options using `cloudflareDev: { }` in `nitro.config
 - `persistDir`: Sets the persist dir (default `.wrangler/state/v3`).
 - `configPath`: Sets a custom path for `wrangler.toml` file.
 - `silent`: Hide initial banner.
-- `shamefullyPatchR2Buckets`: Add workaround for https://github.com/cloudflare/workers-sdk/issues/5360
 - `environment`: Sets specific environment (useful for multi-environment configurations)
 
 ## Development
