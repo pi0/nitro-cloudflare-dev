@@ -1,5 +1,5 @@
 import type { NitroAppPlugin } from "nitropack";
-import type { PlatformProxy } from "wrangler";
+import type { GetPlatformProxyOptions, PlatformProxy } from "wrangler";
 // @ts-ignore
 import { useRuntimeConfig, getRequestURL } from "#imports";
 
@@ -71,11 +71,14 @@ async function _getPlatformProxy() {
     };
   } = useRuntimeConfig();
 
-  const proxy = await getPlatformProxy({
+  const proxyOptions: GetPlatformProxyOptions = {
     configPath: runtimeConfig.wrangler.configPath,
     persist: { path: runtimeConfig.wrangler.persistDir },
-    environment: runtimeConfig.wrangler.environment,
-  });
+  };
+  if (runtimeConfig.wrangler.environment) {
+    proxyOptions.environment = runtimeConfig.wrangler.environment;
+  }
+  const proxy = await getPlatformProxy(proxyOptions);
 
   return proxy;
 }
