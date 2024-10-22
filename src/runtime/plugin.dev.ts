@@ -75,6 +75,8 @@ async function _getPlatformProxy() {
     configPath: runtimeConfig.wrangler.configPath,
     persist: { path: runtimeConfig.wrangler.persistDir },
   };
+  // TODO: investigate why
+  // https://github.com/pi0/nitro-cloudflare-dev/issues/51
   if (runtimeConfig.wrangler.environment) {
     proxyOptions.environment = runtimeConfig.wrangler.environment;
   }
