@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.2.1
+
+[compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.2.0...v0.2.1)
+
+### 🩹 Fixes
+
+- **wrangler:** Only set environment if defined ([#49](https://github.com/pi0/nitro-cloudflare-dev/pull/49))
+
+### 🏡 Chore
+
+- Update lockfile ([d6b44ed](https://github.com/pi0/nitro-cloudflare-dev/commit/d6b44ed))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+- Sébastien Chopin ([@atinux](http://github.com/atinux))
+
 ## v0.2.0
 
 [compare changes](https://github.com/pi0/nitro-cloudflare-dev/compare/v0.1.6...v0.2.0)
