@@ -41,20 +41,20 @@
     "pkg-types": "^1.2.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241011.0",
-    "@types/node": "^22.7.5",
+    "@cloudflare/workers-types": "^4.20241018.0",
+    "@types/node": "^22.7.8",
     "changelogen": "^0.5.7",
-    "eslint": "^9.12.0",
+    "eslint": "^9.13.0",
     "eslint-config-unjs": "^0.4.1",
     "h3": "^1.13.0",
     "jiti": "^2.3.3",
-    "miniflare": "^3.20241004.0",
+    "miniflare": "^3.20241011.0",
     "nitropack": "^2.9.7",
     "nuxt": "^3.13.2",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3",
     "unbuild": "^2.0.0",
-    "wrangler": "^3.80.4"
+    "wrangler": "^3.81.0"
   },
-  "packageManager": "pnpm@9.12.1"
+  "packageManager": "pnpm@9.12.2"
 }
