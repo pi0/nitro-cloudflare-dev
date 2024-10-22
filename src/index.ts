@@ -90,7 +90,7 @@ async function nitroModule(nitro: Nitro) {
 // Dual compatibility with Nuxt and Nitro Modules
 export default function nitroCloudflareDev(arg1: unknown, arg2: unknown) {
   if ((arg2 as Nuxt)?.options?.nitro) {
-    (arg2 as Nuxt).hooks.hook("nitro:config", (nitroConfig) => {
+    (arg2 as Nuxt).hooks.hookOnce("nitro:config", (nitroConfig) => {
       nitroConfig.modules = nitroConfig.modules || [];
       nitroConfig.modules.push(nitroModule);
     });
